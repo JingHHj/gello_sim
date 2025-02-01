@@ -24,8 +24,8 @@ python main.py
 ```
 
 
-Now you after you launch the simulatiuon, you can double click the end effector to select it and move it with right mouse while pressing ctrl!
-For more information you can press F1 or go to left UI `option`->`help`
+- Now you after you launch the simulatiuon, you can double click the end effector to select it and move it with right mouse while pressing ctrl!
+- For more information you can press F1 or go to left UI `option`->`help`
 
 
 
