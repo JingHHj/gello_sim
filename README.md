@@ -5,7 +5,7 @@ This project is aiming at load gello model into MuJoCo and connect it with certa
     * `UR5/gello_ur5`: contains meshes and XML file for the gello ur5 
     * `UR5/scene.xml`: An overall XML file that contain both the robot arm and its xml file
 
-* `AgileX_Piper`: contains STL meshes and XML file that needed to run the the AgileX Piper arm model and its gello model (Have not uplaoded yet)
+* `AgileX_Piper`: contains STL meshes and XML file that needed to run the the [AgileX Piper arm](https://github.com/agilexrobotics/Piper_ros) model and its gello model (Have not uplaoded yet)
 * `main.py`: The main script to run the simulation
 
 # Launch Simulation
