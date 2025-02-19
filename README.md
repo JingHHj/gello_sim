@@ -12,19 +12,23 @@ This project is aiming at load gello model into MuJoCo and connect it with certa
     * `AgileX_Piper/piper_scene.xml`:` An overall XML file that contain both the robot arm 
 * `main.py`: The main script to run the simulation
 
+# Requirements:
+* python==3.10.12
+* mujoco==3.1.6
+
+
 # Launch Simulation
 * For UR5 model
+![UR5 Arm](media/ur5.png)
 ```
-python main.py 
---model ur5
---info True  ## To print out the joints info
+    python main.py --model ur5 --info True ## To print out the joints info
 ```
 
+
 * For AgileX Piper model 
+![AgileX Piper Arm](media/agilex%20piper.pngg)
 ```
-python main.py 
---model agilex_piper
---info True  ## To print out the joints info
+    python main.py --model agilex_piper --info True  ## To print out the joints info
 ```
 
 
