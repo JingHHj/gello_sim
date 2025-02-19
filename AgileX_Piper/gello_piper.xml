@@ -1,0 +1,61 @@
+<mujoco model="gello_piper_description">
+  <!-- <geom name="floor0" size="1 1 0.001" pos="0 0 -0.005" type="plane" condim="3" material="floorplane"/>
+  <light name="light0" pos="0 0 4" dir="0 0 -1" directional="true" castshadow="false" ambient="0.2 0.2 0.2" diffuse="0.8 0.8 0.8"/> -->
+
+  <body name="gello_aiglex_piper" pos="0 0.5 0" euler ="0 0 1.57">
+    <geom type="mesh"  euler ="3.14 0 0" pos="0 0 0.045" rgba="0.792157 0.819608 0.933333 1" mesh="gello_Base_Link"/>
+
+    <body name="gello_Link_1" pos="0 0 0.055"  >
+      <!-- <inertial pos="0 0 0"  mass="0.097868" diaginertia="1.25942e-05 1.3083e-05 1.69469e-05"/> -->
+      <joint name="gello_joint1" pos="0 0 0" axis="0 0 1" range="-2.618 2.618" actuatorfrcrange="-100 100"/>
+
+      <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" euler ="3.14 0 0" mesh="gello_Link_1"/>
+      <body name="gello_Link_2" pos="0 0 0.015" euler ="-1.57 -1.57 0">
+        <!-- <inertial pos="0 0 0" euler="0 0 0" mass="0.290889" diaginertia="0.00177549 0.00173142 0.00014552"/> -->
+        <joint name="gello_joint2" pos="0 0 0" axis="0 0 -1" range="0 3.14" actuatorfrcrange="-100 100"/>
+  
+        <geom type="mesh" pos="0.06 0 -0.014" euler="0 0 3.14" rgba="0.792157 0.819608 0.933333 1" mesh="gello_Link_2"/>
+
+        <body name="gello_Link_3" pos="0.185 -0.034 0.015" euler="0 0 3.14">
+          <!-- <inertial pos="0.075 0.013 0.025" quat="0.0777021 0.702287 -0.0990541 0.700674" mass="0.290848" diaginertia="0.000241946 0.000222224 0.000100384"/> -->
+          <joint name="gello_joint3" pos="0 -0.006 0" axis="0 0 -1" range="-2.697 0" actuatorfrcrange="-100 100"/>
+    
+          <geom type="mesh" pos ="0.075 0.013 0.025" euler ="1.57 0 0" rgba="0.792157 0.819608 0.933333 1" mesh="gello_Link_3"/>
+          <body name="gello_Link_4" pos="0.145 0.01 0"  euler=" 0 -1.57 3.14">
+            <!-- <inertial pos="0.000276465 -0.00102804 -0.00472831" quat="0.492305 0.505285 0.503294 0.499017" mass="0.127087" diaginertia="4.87057e-05 4.10595e-05 3.82001e-05"/> -->
+            <joint name="gello_joint4" pos="0 0 0" axis="0 0 -1" range="-1.832 1.832" actuatorfrcrange="-100 100"/>
+            <geom type="mesh" euler="0 1.57 0" pos = "-0.014 -0.001 -0.00125"rgba="0.792157 0.819608 0.933333 1" mesh="gello_Link_4"/>
+
+            <body name="gello_Link_5" euler="0 1.57 0" pos="0 -0.002 -0.022">
+              <!-- <inertial pos="8.82262e-05 0.0566829 -0.0019612" quat="0.507447 0.490986 0.506887 0.494466" mass="0.144711" diaginertia="5.63237e-05 4.88652e-05 4.39642e-05"/> -->
+              <joint name="gello_joint5" pos="0 0 0" axis="0 0 1" range="-1.22 1.22" actuatorfrcrange="-100 100"/>
+        
+              <geom type="mesh" euler="0 -1.57 0" pos="0.047 0 -0.015" rgba="0.792157 0.819608 0.933333 1" mesh="gello_Link_5"/>
+
+              <body name="end_effector" pos="0.082 -0.015 0.015" euler="1.57 1.57 0" >
+                <!-- <inertial pos="0.0010312 0.0121761 0.0315481" quat="0.0230402 0.707091 0.0373344 0.70576" mass="0.195187" diaginertia="0.000154294 0.000125965 6.43536e-05"/> -->
+                <joint name="gello_joint6" pos="0.013 0.002 0" axis="0 0 1" range="-3.14 3.14" actuatorfrcrange="-100 100"/>
+                
+                <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" euler="0 1.57 0" pos="0 -0.002 0" mesh="gello_end_effector"/>
+                
+                <body name="handle" pos="0.015 0.005 0.019" euler="0 0 0.3">
+                  <!-- <inertial pos="-0.000277778 -0.0467673 -0.00921029" quat="0.46134 0.536174 -0.553273 0.439968" mass="0.0264823" diaginertia="1.45134e-05 1.00041e-05 5.87021e-06"/> -->
+                  <joint name="gello_joint7" pos="0 0 0" axis="0 0 -1"  range="0 0.2" actuatorfrcrange="-10 10"/>
+            
+                  <geom type="mesh" rgba="0.792157 0.819608 0.933333 1" mesh="gello_handle"/>
+                </body>
+
+
+              </body>
+            </body>
+
+          </body>
+        </body>
+      </body>
+    </body>
+  </body>
+
+</mujoco>
+
+
+          

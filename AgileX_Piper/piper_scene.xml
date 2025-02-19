@@ -1,0 +1,81 @@
+<mujoco model="piper_description">
+    <compiler angle="radian" meshdir="./meshes/"/>
+    <option integrator="RK4" timestep="0.01"/>
+    <default>
+        <joint armature="1" damping="1" limited="true"/>
+        <geom conaffinity="0" condim="3" density="5.0" friction="1 0.5 0.5" margin="0.01" rgba="0.8 0.6 0.4 1"/>
+    </default>
+    <visual>
+        <scale framelength="0.5" framewidth="0.01" jointwidth="0.05" actuatorwidth="0.02"/>
+    </visual>
+
+
+    <asset>
+        <texture type="2d" name="texplane" builtin="checker" rgb1="0.2 0.3 0.4" rgb2="0.1 0.15 0.2" width="512" height="512"/>
+        <material name="floorplane" texture="texplane" texuniform="true" reflectance="0.5"/>
+    </asset>
+
+    <worldbody>
+        <geom name="floor0" size="1 1 0.001" pos="0 0 -0.005" type="plane" condim="3" material="floorplane"/>
+        <light name="light0" pos="0 0 4" dir="0 0 -1" directional="true" castshadow="false" ambient="0.2 0.2 0.2" diffuse="0.8 0.8 0.8"/>
+
+        <include file="./gello_piper.xml"/>
+        <include file="./agilex_piper.xml"/>
+
+    </worldbody>
+
+
+    <asset>
+
+        <mesh name="gello_Base_Link" file="./gello_piper_meshes/base_link.stl"/>
+        <mesh name="gello_Link_1" file="./gello_piper_meshes/link1.stl"/>
+        <mesh name="gello_Link_2" file="./gello_piper_meshes/link2.stl"/>
+        <mesh name="gello_Link_3" file="./gello_piper_meshes/link3.stl"/>
+        <mesh name="gello_Link_4" file="./gello_piper_meshes/link4.stl"/>
+        <mesh name="gello_Link_5" file="./gello_piper_meshes/link5.stl"/>
+        <mesh name="gello_end_effector" file="./gello_piper_meshes/end_effector.stl"/>
+        <mesh name="gello_handle" file="./gello_piper_meshes/handle.stl"/>
+
+        
+        <mesh name="base_link_collision" file="./agilex_piper_meshes/base_link_collision.STL"/>
+        <mesh name="base_link" file="./agilex_piper_meshes/base_link.STL"/>
+        <mesh name="link1_collision" file="./agilex_piper_meshes/link1_collision.STL"/>
+        <mesh name="link1" file="./agilex_piper_meshes/link1.STL"/>
+        <mesh name="link2_collision" file="./agilex_piper_meshes/link2_collision.STL"/>
+        <mesh name="link2" file="./agilex_piper_meshes/link2.STL"/>
+        <mesh name="link3_collision" file="./agilex_piper_meshes/link3_collision.STL"/>
+        <mesh name="link3" file="./agilex_piper_meshes/link3.STL"/>
+        <mesh name="link4_collision" file="./agilex_piper_meshes/link4_collision.STL"/>
+        <mesh name="link4" file="./agilex_piper_meshes/link4.STL"/>
+        <mesh name="link5_collision" file="./agilex_piper_meshes/link5_collision.STL"/>
+        <mesh name="link5" file="./agilex_piper_meshes/link5.STL"/>
+        <mesh name="link6_collision" file="./agilex_piper_meshes/link6_collision.STL"/>
+        <mesh name="link6_1" file="./agilex_piper_meshes/link6_1.STL"/>
+        <mesh name="link7_collision" file="./agilex_piper_meshes/link7_collision.STL"/>
+        <mesh name="link7" file="./agilex_piper_meshes/link7.STL"/>
+        <mesh name="link8_collision" file="./agilex_piper_meshes/link8_collision.STL"/>
+        <mesh name="link8" file="./agilex_piper_meshes/link8.STL"/>
+
+    </asset>
+
+    <actuator>
+        <motor joint="gello_joint1" ctrlrange="-10 10" gear="5"/>
+        <motor joint="gello_joint2" ctrlrange="-5 5" gear="5"/>
+        <motor joint="gello_joint3" ctrlrange="-5 5" gear="5"/>
+        <motor joint="gello_joint4" ctrlrange="-5 5" gear="5"/>
+        <motor joint="gello_joint5" ctrlrange="-5 5" gear="4"/>
+        <motor joint="gello_joint6" ctrlrange="-5 5" gear="4"/>
+        <motor joint="gello_joint7" ctrlrange="-5 5" gear="5"/>
+
+
+        
+        <motor joint="joint1" ctrlrange="-10 10" gear="10"/>
+        <motor joint="joint2" ctrlrange="-5 5" gear="2"/>
+        <motor joint="joint3" ctrlrange="-3 3" gear="1"/>
+        <motor joint="joint4" ctrlrange="-3 3" gear="1"/>
+        <motor joint="joint5" ctrlrange="-5 5" gear="2"/>
+        <motor joint="joint6" ctrlrange="-5 5" gear="2"/>
+        <motor joint="joint7" ctrlrange="-5 5" gear="5"/>
+        
+    </actuator> 
+</mujoco>   

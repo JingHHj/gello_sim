@@ -2,7 +2,7 @@ import mujoco
 import mujoco.viewer as viewer
 import argparse
 
-def main(xml_path):
+def main(xml_path,model_name):
     
     # Load the model and data
     model = mujoco.MjModel.from_xml_path(xml_path)
@@ -14,9 +14,14 @@ def main(xml_path):
         while viewer.is_running():
 
             # teleoperation
-            for i in range(6):
-                data.qpos[i+6] = data.qpos[i]
-            mujoco.mj_step(model, data)
+            if model_name == 'ur5':
+                for i in range(6):
+                    data.qpos[i+6] = data.qpos[i]
+                mujoco.mj_step(model, data)
+            if model_name == 'agilex_piper':
+                for i in range(7):
+                    data.qpos[i+7] = data.qpos[i]
+                mujoco.mj_step(model, data)
    
             viewer.sync()
 
@@ -50,14 +55,14 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     if args.model == 'agilex_piper':
-        xml_path = "./agilex_piper.xml"
+        xml_path = "./AgileX_Piper/piper_scene.xml"
     elif args.model == 'ur5':
-        xml_path = "./UR5/scene.xml"
+        xml_path = "./UR5/ur5_scene.xml"
 
     if args.info:
         print_info(xml_path)
 
-    main(xml_path)
+    main(xml_path,args.model)
 
 
     
